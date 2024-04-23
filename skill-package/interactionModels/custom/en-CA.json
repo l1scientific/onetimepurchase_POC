@@ -1,0 +1,2585 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "article_num",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.409746959288.1082121761857"
+              }
+            }
+          ],
+          "name": "FetchArticleIntent",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "xmonth",
+              "elicitationRequired": true,
+              "type": "AMAZON.Month",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.441659958809.1303303958596"
+              }
+            },
+            {
+              "name": "xday",
+              "elicitationRequired": false,
+              "type": "AMAZON.Ordinal",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "xyear",
+              "elicitationRequired": false,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "yday",
+              "elicitationRequired": false,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "SelectDateIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "xlocation",
+              "elicitationRequired": false,
+              "type": "LOCATION_SLOT",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "ListByLocationIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "xtype",
+              "elicitationRequired": false,
+              "type": "PPAB_list",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "list_all",
+              "elicitationRequired": false,
+              "type": "ALL_SLOT",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "ListAvailableIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help me please",
+            "assist me please",
+            "give me assistance",
+            "give me help",
+            "help me",
+            "help"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "yes choose that",
+            "yes read that one",
+            "yeah read me that"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "ListAttrIntent",
+          "samples": [
+            "list my attributes"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "MainMenuIntent",
+          "samples": [
+            "take me to the main menu",
+            "The main menu",
+            "main menu",
+            "back to the main menu",
+            "back to main menu",
+            "Give me the main menu",
+            "I want the main menu",
+            "return to the main menu",
+            "go back to the main menu",
+            "return to main menu",
+            "Go back to main menu"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "UpOneMenuIntent",
+          "samples": [
+            "go back",
+            "up one level",
+            "go up one menu",
+            "go up one level"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "ResetAttrIntent",
+          "samples": [
+            "reset attributes"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "PauseIntent",
+          "samples": [
+            "wait",
+            "take a break",
+            "please pause",
+            "pause",
+            "interrupt"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "ResumeIntent",
+          "samples": [
+            "wait nevermind",
+            "resume article",
+            "resume"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "article_num",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{article_num}"
+              ]
+            }
+          ],
+          "name": "FetchArticleIntent",
+          "samples": [
+            "grab article {article_num}",
+            "get article {article_num}",
+            "fetch  article {article_num}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "RepeatIntent",
+          "samples": [
+            "say them again",
+            "list them again",
+            "say the list again",
+            "tell me one more time",
+            "tell me again",
+            "can you say it again please",
+            "say it again please",
+            "say that again",
+            "please repeat that list",
+            "please repeat the list",
+            "repeat that list",
+            "repeat the list",
+            "repeat please",
+            "please repeat that",
+            "please repeat",
+            "repeat that",
+            "repeat"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xnumber",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "volume",
+              "type": "VOLUME_SLOT"
+            }
+          ],
+          "name": "SelectNumberIntent",
+          "samples": [
+            "article {xnumber}",
+            "{volume} {xnumber}",
+            "set up the {volume} to {xnumber}",
+            "change the {volume} to {xnumber}",
+            "make the {volume} {xnumber}",
+            "give me {volume} {xnumber}",
+            "set the {volume} to {xnumber}",
+            "give me {volume} number {xnumber}",
+            "sure select {xnumber}",
+            "sure choose {xnumber}",
+            "yeah give me {xnumber} ",
+            "yes select {xnumber}",
+            "select number {xnumber} article",
+            "read me number {xnumber} article",
+            "read me article {xnumber}",
+            "{xnumber} please",
+            "{xnumber}",
+            "I\u0027ll take number {xnumber}",
+            "get me number {xnumber}",
+            "I want number {xnumber}",
+            "Give me number {xnumber}",
+            "choose number {xnumber}",
+            "select  {xnumber}",
+            "select document {xnumber}",
+            "select article {xnumber}",
+            "select article number {xnumber}",
+            "select document number {xnumber}",
+            "select number {xnumber}",
+            "select {xnumber}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xtype",
+              "type": "PPAB_list"
+            },
+            {
+              "name": "list_all",
+              "type": "ALL_SLOT"
+            }
+          ],
+          "name": "ListAvailableIntent",
+          "samples": [
+            "list {list_all} available {xtype}",
+            "tell me what {xtype} you have",
+            "what {xtype} are available",
+            "what {xtype} do you have",
+            "list of {xtype}",
+            "give me {list_all} available {xtype}",
+            "tell me {list_all} {xtype}",
+            "give me the {list_all} list of {xtype}",
+            "list {list_all} the available {xtype}",
+            "list {list_all} {xtype}",
+            "give me {list_all} {xtype}",
+            "list {list_all} the {xtype}",
+            "select another {xtype}",
+            "select a different {xtype}",
+            "list {xtype}",
+            "go to the {xtype}",
+            "go back to the list of {xtype}",
+            "list the {xtype}",
+            "list available {xtype}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xmonth",
+              "type": "AMAZON.Month",
+              "samples": [
+                "of {xmonth}",
+                "in {xmonth}",
+                "{xmonth}"
+              ]
+            },
+            {
+              "name": "xday",
+              "type": "AMAZON.Ordinal"
+            },
+            {
+              "name": "xyear",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "yday",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "SelectDateIntent",
+          "samples": [
+            "list of articles of {xmonth} {yday} {xyear}",
+            "list of articles of {xmonth} {xday} {xyear}",
+            "give me {xmonth} {yday}",
+            "{xmonth} {yday} {xyear}",
+            "select {xmonth} {yday}",
+            "{xmonth} {yday}",
+            "the {yday} of {xmonth}",
+            "the {xday} of {xmonth}",
+            "{xyear} {xmonth} {xday}",
+            "{xmonth} {xday}",
+            "read me {xmonth} {xday} {xyear}",
+            "Select {xmonth} {xday} {xyear}",
+            "choose the {xday} of {xmonth} {xyear}",
+            "choose {xmonth} {xday} {xyear}",
+            "give me the {xday} of {xmonth} {xyear}",
+            "give me the {xday} of {xmonth}",
+            "give me {xmonth} {xday}",
+            "give me {xmonth} {xday} {xyear}",
+            "select the {xday} of {xmonth}",
+            "select the {xday} of {xmonth} {xyear}",
+            "{xmonth} {xday} {xyear}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "RTY_val",
+              "type": "RTY_SLOT"
+            },
+            {
+              "name": "xtype",
+              "type": "PPAB_list"
+            }
+          ],
+          "name": "SelectRecentIntent",
+          "samples": [
+            "give me {RTY_val} {xtype}",
+            "tell me the {RTY_val} {xtype}",
+            "list the {RTY_val} {xtype}",
+            "give me the {RTY_val} {xtype}",
+            "I \u0027ll take the {RTY_val}",
+            "give me the news from {RTY_val}",
+            "get me the {RTY_val} news",
+            "give me the {RTY_val} edition",
+            "I want {RTY_val} edition",
+            "I want {RTY_val}",
+            "choose {RTY_val}",
+            "select {RTY_val}",
+            "go to {RTY_val} {xtype}",
+            "{RTY_val} {xtype}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xregion",
+              "type": "REGION_SLOT"
+            }
+          ],
+          "name": "SelectRegionIntent",
+          "samples": [
+            "the {xregion} please",
+            "give me the {xregion}",
+            "I want the {xregion}",
+            "selection the {xregion} region",
+            "select the {xregion}",
+            "{xregion} please",
+            "what do you have in {xregion}",
+            "I\u0027d like {xregion}",
+            "{xregion}",
+            "get the publications from {xregion}",
+            "I choose {xregion}",
+            "give me {xregion}",
+            "select {xregion}",
+            "I want {xregion}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "bppub_name",
+              "type": "BLACKPRESS_PUB_SLOT"
+            }
+          ],
+          "name": "SelectBlackPressPubIntent",
+          "samples": [
+            "tell me news from {bppub_name}",
+            "read me news from {bppub_name}",
+            "read me the news from the {bppub_name}",
+            "tell me the news from the {bppub_name}",
+            "the {bppub_name}",
+            "read the {bppub_name}",
+            "read me {bppub_name}",
+            "load {bppub_name}",
+            "load the {bppub_name}",
+            "play the {bppub_name}",
+            "give me the {bppub_name}",
+            "give me {bppub_name}",
+            "choose {bppub_name}",
+            "choose the {bppub_name}",
+            "I\u0027d like {bppub_name}",
+            "I\u0027d like the {bppub_name}",
+            "select the {bppub_name}",
+            "select {bppub_name}",
+            "I want the {bppub_name}",
+            "I want {bppub_name}",
+            "get me {bppub_name}",
+            "open the {bppub_name}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xgenre",
+              "type": "GENRE_SLOT"
+            }
+          ],
+          "name": "SelectGenreIntent",
+          "samples": [
+            "I want {xgenre} articles",
+            "give me the {xgenre} articles",
+            "what is there under the {xgenre} genre",
+            "what have you got in {xgenre} articles",
+            "tell me what you have in {xgenre} articles",
+            "{xgenre}",
+            "what are the {xgenre} articles",
+            "give me {xgenre} articles",
+            "select {xgenre}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "RTY_val",
+              "type": "RTY_SLOT"
+            },
+            {
+              "name": "xpubname",
+              "type": "BLACKPRESS_PUB_SLOT"
+            }
+          ],
+          "name": "CompoundRecentPubIntent",
+          "samples": [
+            "select {RTY_val} edition of {xpubname}",
+            "give me {RTY_val} edition of the {xpubname}",
+            "load the {RTY_val} of {xpubname}",
+            "tell me articles from {xpubname} {RTY_val} edition",
+            "I want the {xpubname} {RTY_val} edition",
+            "I\u0027d like {RTY_val} edition from {xpubname}",
+            "give me {xpubname} {RTY_val} edition",
+            "I want the {RTY_val} edition of {xpubname}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xday",
+              "type": "AMAZON.Ordinal"
+            },
+            {
+              "name": "xmonth",
+              "type": "AMAZON.Month"
+            },
+            {
+              "name": "xyear",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "xpubname",
+              "type": "BLACKPRESS_PUB_SLOT"
+            }
+          ],
+          "name": "CompoundDatePubIntent",
+          "samples": [
+            "I\u0027d like articles from the {xmonth} {xday} {xyear} edition of the {xpubname}",
+            "tell me the {xpubname} {xmonth} {xday} {xyear} edition",
+            "get me the {xpubname} {xmonth} {xday} edition",
+            "I want the {xmonth} {xday} edition of the {xpubname}",
+            "give me the {xday} of {xmonth} {xyear} from the {xpubname}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xordinal",
+              "type": "AMAZON.Ordinal"
+            }
+          ],
+          "name": "SelectOrdinalIntent",
+          "samples": [
+            "the {xordinal} one",
+            "the {xordinal} article",
+            "I\u0027ll take the {xordinal} article",
+            "I choose the {xordinal} one",
+            "give me the {xordinal} one",
+            "I want the {xordinal} one"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "multipleValues": {
+                "enabled": false
+              },
+              "name": "xlocation",
+              "type": "LOCATION_SLOT"
+            }
+          ],
+          "name": "ListByLocationIntent",
+          "samples": [
+            "tell me what publications are in {xlocation}",
+            "i want to know what publications you have in {xlocation}",
+            "what publications are available in {xlocation}",
+            "what publications are in {xlocation}",
+            "do you have publications in {xlocation}",
+            "tell me what papers you have in {xlocation}",
+            "in {xlocation} what are your available papers",
+            "what papers do you have in {xlocation} ",
+            "list the publications in {xlocation}",
+            "tell me what publications you have in {xlocation}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "xspeed",
+              "type": "SPEED_SLOT"
+            },
+            {
+              "name": "volume",
+              "type": "VOLUME_SLOT"
+            },
+            {
+              "name": "xnumber",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "ChangeSpeedIntent",
+          "samples": [
+            "{xspeed}",
+            "select {xspeed}",
+            "read at speed {xnumber}",
+            "make the speed {xspeed}",
+            "change the speed to {xnumber}",
+            "set the speed to {xnumber}",
+            "{volume} {xspeed}",
+            "slow {xspeed}",
+            "speed {xspeed}",
+            "{xspeed} speed",
+            "change the speed to {xspeed}",
+            "set the speed to {xspeed}",
+            "read at the {xspeed} speed",
+            "talk {xspeed}",
+            "{xspeed} up",
+            "read more {xspeed}",
+            "read {xspeed}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "MoreHelpIntent",
+          "samples": [
+            "help me more",
+            "can i have more help",
+            "more help please",
+            "give me more help",
+            "more help"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "SkipIntent",
+          "samples": [
+            "fast forward",
+            "skip ahead",
+            "skip"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "RewindIntent",
+          "samples": [
+            "rewind this article",
+            "please rewind",
+            "rewind"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "RestartIntent",
+          "samples": [
+            "go to the beginning",
+            "start again",
+            "start over",
+            "begin again",
+            "restart the article",
+            "restart"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "FeedbackIntent",
+          "samples": [
+            "I want to send feedback",
+            "how do I share my feedback",
+            "i want to give feedback",
+            "i have feedback",
+            "give feedback",
+            "feedback"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "ContinueIntent",
+          "samples": [
+            "please continue",
+            "yes continue",
+            "continue"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "ThatOneIntent",
+          "samples": [
+            "choose that one",
+            "pick that one",
+            "yeah that one",
+            "that one",
+            "give me that one",
+            "select that one"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "OpenIntent",
+          "samples": [
+            "play cbc narrator",
+            "play the cbc narrator",
+            "start cbc",
+            "start the cbc narrator",
+            "launch cbc",
+            "launch the black press news reader",
+            "open black press news reader",
+            "open the black press news reader",
+            "play test news reader",
+            "play the test news reader",
+            "start the test news reader",
+            "start test news reader",
+            "launch the test news reader",
+            "launch test news reader",
+            "open test news reader",
+            "open the test news reader"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "WhatsNewIntent",
+          "samples": [
+            "what changed",
+            "are there any updates",
+            "what are the lastest updates",
+            "whats new"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "date_value",
+              "type": "WEEKDAY_SLOT"
+            }
+          ],
+          "name": "SelectRecentWeekdayIntent",
+          "samples": [
+            "go to the edition for {date_value}",
+            "go to {date_value} edition",
+            "give me {date_value} edition",
+            "{date_value} edition",
+            "Open the edition for {date_value}",
+            "Take me to the edition for {date_value}",
+            "edition for {date_value}",
+            "go to {date_value}",
+            "take me to {date_value}",
+            "can I have the news from {date_value}",
+            "give me the news from {date_value}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "subscription_plan",
+              "type": "ISP_SLOT"
+            }
+          ],
+          "name": "BuySubscriptionIntent",
+          "samples": [
+            "purchase {subscription_plan}",
+            "buy {subscription_plan}",
+            "buy the {subscription_plan} subscription",
+            "purchase the {subscription_plan} subscription",
+            "I want to purchase the {subscription_plan} subscription",
+            "I want to buy the {subscription_plan} subscription",
+            "purchase a subscription",
+            "buy a subscription",
+            "purchase subscription",
+            "buy subscription",
+            "buy the subscription",
+            "purchase the subscription",
+            "I want to purchase the subscription",
+            "I want to buy the subscription",
+            "I want to purchase a subscription",
+            "I want to buy a subscription"
+          ]
+        },
+        {
+          "name": "CancelSubscriptionIntent",
+          "samples": [
+            "cancel the subscription",
+            "stop the subscription",
+            "I want to stop the subscription",
+            "I want to cancel the subscription",
+            "cancel my subscription",
+            "stop my subscription",
+            "I want to stop my subscription",
+            "I want to cancel my subscription"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "genre"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "publication date"
+                ],
+                "value": "date"
+              }
+            },
+            {
+              "name": {
+                "value": "author"
+              }
+            },
+            {
+              "name": {
+                "value": "publisher"
+              }
+            }
+          ],
+          "name": "LISTKEY_OPTIONS"
+        },
+        {
+          "values": [
+            {
+              "synonyms": [
+                "month",
+                "month to month"
+              ],
+              "name": {
+                "value": "monthly"
+              }
+            },
+            {
+              "synonyms": [
+                "year",
+                "yaer to year"
+              ],
+              "name": {
+                "value": "yearly"
+              }
+            }
+          ],
+          "name": "ISP_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "newspapers"
+              }
+            },
+            {
+              "name": {
+                "value": "newspaper"
+              }
+            },
+            {
+              "name": {
+                "value": "news articles"
+              }
+            },
+            {
+              "name": {
+                "value": "news article"
+              }
+            },
+            {
+              "name": {
+                "value": "books"
+              }
+            },
+            {
+              "name": {
+                "value": "news"
+              }
+            },
+            {
+              "name": {
+                "value": "book"
+              }
+            }
+          ],
+          "name": "BOOKNEWS_val"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "locations"
+              }
+            },
+            {
+              "name": {
+                "value": "location"
+              }
+            },
+            {
+              "name": {
+                "value": "region"
+              }
+            },
+            {
+              "name": {
+                "value": "regions"
+              }
+            },
+            {
+              "name": {
+                "value": "genres"
+              }
+            },
+            {
+              "name": {
+                "value": "genre"
+              }
+            },
+            {
+              "name": {
+                "value": "editions"
+              }
+            },
+            {
+              "name": {
+                "value": "edition"
+              }
+            },
+            {
+              "name": {
+                "value": "publications"
+              }
+            },
+            {
+              "name": {
+                "value": "publishers"
+              }
+            },
+            {
+              "name": {
+                "value": "articles"
+              }
+            },
+            {
+              "name": {
+                "value": "papers"
+              }
+            },
+            {
+              "name": {
+                "value": "article"
+              }
+            },
+            {
+              "name": {
+                "value": "publication"
+              }
+            },
+            {
+              "name": {
+                "value": "publisher"
+              }
+            }
+          ],
+          "name": "PPAB_list"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "most current"
+              }
+            },
+            {
+              "name": {
+                "value": "current"
+              }
+            },
+            {
+              "name": {
+                "value": "newest"
+              }
+            },
+            {
+              "name": {
+                "value": "latest"
+              }
+            },
+            {
+              "name": {
+                "value": "most recent"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "yesterdays",
+                  "yesterday \u0027s"
+                ],
+                "value": "yesterday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "todays",
+                  "today \u0027s"
+                ],
+                "value": "today"
+              }
+            }
+          ],
+          "name": "RTY_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "xyz test 1"
+              }
+            }
+          ],
+          "name": "xyz_test"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Tim test"
+              }
+            }
+          ],
+          "name": "PUBLISHER_NAME_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "region ground zero"
+              }
+            }
+          ],
+          "name": "REGION_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "Pub Code"
+                ],
+                "value": "paper name"
+              },
+              "id": "1000"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "alberni news",
+                  "AVN"
+                ],
+                "value": "alberni valley news"
+              },
+              "id": "1001"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "BLM"
+                ],
+                "value": "boulevard magazine"
+              },
+              "id": "1002"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "BES"
+                ],
+                "value": "boulevard mid-island"
+              },
+              "id": "1003"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "campbell river news",
+                  "CRM"
+                ],
+                "value": "campbell river mirror"
+              },
+              "id": "1004"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "WCE"
+                ],
+                "value": "canadian evergreen"
+              },
+              "id": "1005"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chemainus news",
+                  "CHC"
+                ],
+                "value": "chemainus valley courier"
+              },
+              "id": "1006"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "comox news",
+                  "CVR"
+                ],
+                "value": "comox valley record"
+              },
+              "id": "1007"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CCI"
+                ],
+                "value": "cowichan valley citizen"
+              },
+              "id": "1008"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "goldstream news",
+                  "GNG"
+                ],
+                "value": "goldstream news gazette"
+              },
+              "id": "1009"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "gulf islands news",
+                  "GID"
+                ],
+                "value": "gulf islands driftwood"
+              },
+              "id": "1010"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ladysmith news",
+                  "LCH"
+                ],
+                "value": "ladysmith chronicle"
+              },
+              "id": "1011"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "LCO"
+                ],
+                "value": "lake cowichan gazette"
+              },
+              "id": "1012"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "MMA"
+                ],
+                "value": "monday magazine"
+              },
+              "id": "1013"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "nanaimo news",
+                  "NBU"
+                ],
+                "value": "nanaimo news bulletin"
+              },
+              "id": "1014"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NIG"
+                ],
+                "value": "north island gazette"
+              },
+              "id": "1015"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "OBN"
+                ],
+                "value": "oak bay news"
+              },
+              "id": "1016"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "OLM"
+                ],
+                "value": "oasis life"
+              },
+              "id": "1017"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "parksville news",
+                  "PQN"
+                ],
+                "value": "parksville qualicum beach news"
+              },
+              "id": "1018"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "peninsula news",
+                  "PNR"
+                ],
+                "value": "peninsula news review"
+              },
+              "id": "1019"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "REV"
+                ],
+                "value": "real estate victoria"
+              },
+              "id": "1020"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SNE"
+                ],
+                "value": "saanich news"
+              },
+              "id": "1021"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sooke news",
+                  "SNM"
+                ],
+                "value": "sooke news mirror"
+              },
+              "id": "1022"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tofino news",
+                  "UWN"
+                ],
+                "value": "tofino-ucluelet westerly news"
+              },
+              "id": "1023"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "IFD"
+                ],
+                "value": "vancouver island free daily"
+              },
+              "id": "1024"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "VNE"
+                ],
+                "value": "victoria news"
+              },
+              "id": "1025"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "WCM"
+                ],
+                "value": "wave magazine - campbell river"
+              },
+              "id": "1026"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "WCT"
+                ],
+                "value": "west coast traveller"
+              },
+              "id": "1027"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ABB"
+                ],
+                "value": "abbotsford news"
+              },
+              "id": "1028"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "harrison news",
+                  "agassiz news",
+                  "AHO"
+                ],
+                "value": "agassiz-harrison observer"
+              },
+              "id": "1029"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ALT"
+                ],
+                "value": "aldergrove star"
+              },
+              "id": "1030"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "BCLN"
+                ],
+                "value": "bc local news"
+              },
+              "id": "1031"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NHL"
+                ],
+                "value": "boulevard chinese magazine"
+              },
+              "id": "1032"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chilliwack news",
+                  "CPL"
+                ],
+                "value": "chilliwack progress"
+              },
+              "id": "1033"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cloverdale news",
+                  "CLR"
+                ],
+                "value": "cloverdale reporter"
+              },
+              "id": "1034"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fraser news",
+                  "FVD"
+                ],
+                "value": "fraser valley daily"
+              },
+              "id": "1035"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hope news",
+                  "HSL"
+                ],
+                "value": "hope standard"
+              },
+              "id": "1036"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "IND"
+                ],
+                "value": "indulge magazine"
+              },
+              "id": "1037"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "langley news",
+                  "LAT"
+                ],
+                "value": "langley advance times"
+              },
+              "id": "1038"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pitt meadows news",
+                  "maple ridge news",
+                  "MRN"
+                ],
+                "value": "maple ridge-pitt meadows news"
+              },
+              "id": "1039"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mission news",
+                  "MCR"
+                ],
+                "value": "mission city record"
+              },
+              "id": "1040"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "delta news",
+                  "NDR"
+                ],
+                "value": "north delta reporter"
+              },
+              "id": "1041"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "OUN"
+                ],
+                "value": "outlook north vancouver"
+              },
+              "id": "1042"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PAN"
+                ],
+                "value": "peace arch news"
+              },
+              "id": "1043"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "surrey news",
+                  "SUL"
+                ],
+                "value": "surrey now-leader"
+              },
+              "id": "1044"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "DRI"
+                ],
+                "value": "today\u0027s drive"
+              },
+              "id": "1045"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "burns lake news",
+                  "LDN"
+                ],
+                "value": "burns lake lakes district news"
+              },
+              "id": "1046"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CCO"
+                ],
+                "value": "caledonia courier"
+              },
+              "id": "1047"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "HGO"
+                ],
+                "value": "haida gwaii observer"
+              },
+              "id": "1048"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "HTO"
+                ],
+                "value": "houston today"
+              },
+              "id": "1049"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kitimat news",
+                  "NSE"
+                ],
+                "value": "kitimat northern sentinel"
+              },
+              "id": "1050"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "TKA"
+                ],
+                "value": "northern connector"
+              },
+              "id": "1051"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "prince rupert news",
+                  "PRU"
+                ],
+                "value": "prince rupert northern view"
+              },
+              "id": "1052"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "smithers news",
+                  "SIN"
+                ],
+                "value": "smithers interior news"
+              },
+              "id": "1053"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SNA"
+                ],
+                "value": "stuart nechako advertiser"
+              },
+              "id": "1054"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "TST"
+                ],
+                "value": "terrace standard"
+              },
+              "id": "1055"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "vanderhoof news",
+                  "OEB"
+                ],
+                "value": "vanderhoof omineca express"
+              },
+              "id": "1056"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hundred mile house news",
+                  "OMH"
+                ],
+                "value": "one hundred mile house free press"
+              },
+              "id": "1057"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "barriere news",
+                  "NTS"
+                ],
+                "value": "barriere star journal"
+              },
+              "id": "1058"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NTC"
+                ],
+                "value": "clearwater times"
+              },
+              "id": "1059"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CMA"
+                ],
+                "value": "coast mountain news"
+              },
+              "id": "1060"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "quesnel news",
+                  "QCO"
+                ],
+                "value": "quesnel cariboo observer"
+              },
+              "id": "1061"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CAD"
+                ],
+                "value": "weekend advisor"
+              },
+              "id": "1062"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "williams lake news",
+                  "WLT"
+                ],
+                "value": "williams lake tribune"
+              },
+              "id": "1063"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NAL"
+                ],
+                "value": "arrow lakes news"
+              },
+              "id": "1064"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cache creek news",
+                  "ACC"
+                ],
+                "value": "ashcroft cache creek journal"
+              },
+              "id": "1065"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "BKE"
+                ],
+                "value": "boulevard - kelowna"
+              },
+              "id": "1066"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "GBC"
+                ],
+                "value": "boundary creek times"
+              },
+              "id": "1067"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CAN"
+                ],
+                "value": "castlegar news"
+              },
+              "id": "1068"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CVP"
+                ],
+                "value": "columbia valley pioneer"
+              },
+              "id": "1069"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cranbrook news",
+                  "CDT"
+                ],
+                "value": "cranbrook townsman"
+              },
+              "id": "1070"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "creston valley news",
+                  "CVA"
+                ],
+                "value": "creston valley advance"
+              },
+              "id": "1071"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "EVN"
+                ],
+                "value": "eagle valley news"
+              },
+              "id": "1072"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fernie news",
+                  "FFP"
+                ],
+                "value": "fernie free press"
+              },
+              "id": "1073"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "GOS"
+                ],
+                "value": "golden star"
+              },
+              "id": "1074"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "GFG"
+                ],
+                "value": "grand forks gazette"
+              },
+              "id": "1075"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kamloops news",
+                  "KTW"
+                ],
+                "value": "kamloops this week"
+              },
+              "id": "1076"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "KCN"
+                ],
+                "value": "kelowna capital news"
+              },
+              "id": "1077"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "KER"
+                ],
+                "value": "keremeos review"
+              },
+              "id": "1078"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "KDB"
+                ],
+                "value": "kimberley bulletin"
+              },
+              "id": "1079"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "KAD"
+                ],
+                "value": "kootenay extra"
+              },
+              "id": "1080"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "WIN"
+                ],
+                "value": "lake country calendar"
+              },
+              "id": "1081"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "KWS"
+                ],
+                "value": "nelson star"
+              },
+              "id": "1082"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "penticton news",
+                  "PWN"
+                ],
+                "value": "penticton western news"
+              },
+              "id": "1083"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "RTR"
+                ],
+                "value": "revelstoke review"
+              },
+              "id": "1084"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "TRL"
+                ],
+                "value": "rossland news"
+              },
+              "id": "1085"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SAA"
+                ],
+                "value": "salmon arm observer"
+              },
+              "id": "1086"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "shuswap news",
+                  "LSN"
+                ],
+                "value": "shuswap market news"
+              },
+              "id": "1087"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PSS"
+                ],
+                "value": "similkameen spotlight"
+              },
+              "id": "1088"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SOM"
+                ],
+                "value": "south okanagan market"
+              },
+              "id": "1089"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SUM"
+                ],
+                "value": "summerland review"
+              },
+              "id": "1090"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "TDT"
+                ],
+                "value": "trail daily times"
+              },
+              "id": "1091"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "vernon news",
+                  "VMS"
+                ],
+                "value": "vernon morning star"
+              },
+              "id": "1092"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "WEK"
+                ],
+                "value": "west k news"
+              },
+              "id": "1093"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "OWT"
+                ],
+                "value": "wine trails"
+              },
+              "id": "1094"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "BAS"
+                ],
+                "value": "bashaw star"
+              },
+              "id": "1095"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "CAS"
+                ],
+                "value": "castor advance"
+              },
+              "id": "1096"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ECK"
+                ],
+                "value": "eckville echo"
+              },
+              "id": "1097"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "LAC"
+                ],
+                "value": "lacombe express"
+              },
+              "id": "1098"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "MBFL"
+                ],
+                "value": "manitoba farm life"
+              },
+              "id": "1099"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "AGVI"
+                ],
+                "value": "northern agvisor"
+              },
+              "id": "1100"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "WPF"
+                ],
+                "value": "pipestone flyer"
+              },
+              "id": "1101"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PONO"
+                ],
+                "value": "ponoka news"
+              },
+              "id": "1102"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PRW"
+                ],
+                "value": "ponoka rimbey weekender"
+              },
+              "id": "1103"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PW"
+                ],
+                "value": "prairie wheels"
+              },
+              "id": "1104"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PWMB"
+                ],
+                "value": "prairie wheels manitoba"
+              },
+              "id": "1105"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PWSK"
+                ],
+                "value": "prairie wheels saskatchewan"
+              },
+              "id": "1106"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ADV"
+                ],
+                "value": "red deer advocate"
+              },
+              "id": "1107"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "RDCN"
+                ],
+                "value": "red deer county news"
+              },
+              "id": "1108"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "RDLS"
+                ],
+                "value": "red deer life sunday"
+              },
+              "id": "1109"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "RIMB"
+                ],
+                "value": "rimbey review"
+              },
+              "id": "1110"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ROCK"
+                ],
+                "value": "rocky mountain outlook"
+              },
+              "id": "1111"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SKFL"
+                ],
+                "value": "saskatchewan farm life"
+              },
+              "id": "1112"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ADVI"
+                ],
+                "value": "southern advisor"
+              },
+              "id": "1113"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "STI"
+                ],
+                "value": "stettler independent"
+              },
+              "id": "1114"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SYL"
+                ],
+                "value": "sylvan lake news"
+              },
+              "id": "1115"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "PSF"
+                ],
+                "value": "wetaskiwin pipestone flyer"
+              },
+              "id": "1116"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "YHY"
+                ],
+                "value": "your house your home"
+              },
+              "id": "1117"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "SWA"
+                ],
+                "value": "stettler weekender"
+              },
+              "id": "1118"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "YKN"
+                ],
+                "value": "yukon news"
+              },
+              "id": "1119"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NNHR"
+                ],
+                "value": "hay river hub"
+              },
+              "id": "1120"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NNID"
+                ],
+                "value": "inuvik drum"
+              },
+              "id": "1121"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NNN"
+                ],
+                "value": "nwt news north"
+              },
+              "id": "1122"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NNYK"
+                ],
+                "value": "yellowknifer"
+              },
+              "id": "1123"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NUKN"
+                ],
+                "value": "kivalliq news"
+              },
+              "id": "1124"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "NUN"
+                ],
+                "value": "nunavut news"
+              },
+              "id": "1125"
+            }
+          ],
+          "name": "BLACKPRESS_PUB_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "british columbia"
+              }
+            },
+            {
+              "name": {
+                "value": "ottawa"
+              }
+            },
+            {
+              "name": {
+                "value": "opinion"
+              }
+            },
+            {
+              "name": {
+                "value": "general news"
+              }
+            },
+            {
+              "name": {
+                "value": "uncategorized"
+              }
+            },
+            {
+              "name": {
+                "value": "community"
+              }
+            },
+            {
+              "name": {
+                "value": "business"
+              }
+            },
+            {
+              "name": {
+                "value": "entertainment"
+              }
+            },
+            {
+              "name": {
+                "value": "sports"
+              }
+            }
+          ],
+          "name": "GENRE_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "new york"
+              }
+            },
+            {
+              "name": {
+                "value": "arrow lakes"
+              }
+            },
+            {
+              "name": {
+                "value": "victoria"
+              }
+            },
+            {
+              "name": {
+                "value": "kelowna"
+              }
+            }
+          ],
+          "name": "LOCATION_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "medium"
+                ],
+                "value": "medium"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ex fast",
+                  "x fast",
+                  "extra fast"
+                ],
+                "value": "x-fast"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "high"
+                ],
+                "value": "fast"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ex slow",
+                  "x slow",
+                  "extra slow"
+                ],
+                "value": "x-slow"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "low"
+                ],
+                "value": "slow"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "down",
+                  "decrease",
+                  "slowly"
+                ],
+                "value": "slower"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "up",
+                  "increase",
+                  "hurry",
+                  "quickly ",
+                  "quicker"
+                ],
+                "value": "faster"
+              }
+            }
+          ],
+          "name": "SPEED_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "whole"
+              }
+            },
+            {
+              "name": {
+                "value": "complete"
+              }
+            },
+            {
+              "name": {
+                "value": "full"
+              }
+            },
+            {
+              "name": {
+                "value": "every"
+              }
+            },
+            {
+              "name": {
+                "value": "all"
+              }
+            }
+          ],
+          "name": "ALL_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "volume level"
+              }
+            },
+            {
+              "name": {
+                "value": "volume"
+              }
+            }
+          ],
+          "name": "VOLUME_SLOT"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "last sunday \u0027s"
+                ],
+                "value": "last sunday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "last saturday \u0027s"
+                ],
+                "value": "last saturday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "last friday \u0027s"
+                ],
+                "value": "last friday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "last thursday \u0027s"
+                ],
+                "value": "last thursday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "last wednesday \u0027s"
+                ],
+                "value": "last wednesday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "last tuesday \u0027s"
+                ],
+                "value": "last tuesday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "last monday \u0027s"
+                ],
+                "value": "last monday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sunday \u0027s",
+                  "this sunday \u0027s",
+                  "this sunday"
+                ],
+                "value": "sunday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "saturday \u0027s",
+                  "this saturday \u0027s",
+                  "this saturday"
+                ],
+                "value": "saturday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "friday \u0027s",
+                  "this friday \u0027s",
+                  "this friday"
+                ],
+                "value": "friday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "thursday \u0027s",
+                  "this thursday \u0027s",
+                  "this thursday"
+                ],
+                "value": "thursday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "wednesday \u0027s",
+                  "this wednesday \u0027s",
+                  "this wednesday"
+                ],
+                "value": "wednesday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tuesday \u0027s",
+                  "this tuesday \u0027s",
+                  "this tuesday"
+                ],
+                "value": "tuesday"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "monday \u0027s",
+                  "this monday \u0027s",
+                  "this monday"
+                ],
+                "value": "monday"
+              }
+            }
+          ],
+          "name": "WEEKDAY_SLOT"
+        }
+      ],
+      "invocationName": "c. b. c. subscription"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Enter the test number"
+          }
+        ],
+        "id": "Elicit.Slot.1453548895668.1312643773592"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "tell me the article number"
+          },
+          {
+            "type": "PlainText",
+            "value": "what article number?"
+          }
+        ],
+        "id": "Elicit.Slot.409746959288.1082121761857"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "specify the month"
+          }
+        ],
+        "id": "Elicit.Slot.441659958809.1303303958596"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please specify the day"
+          }
+        ],
+        "id": "Elicit.Slot.441659958809.1366928564556"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "enter the code digit by digit"
+          }
+        ],
+        "id": "Elicit.Slot.51204916042.1391771909087"
+      }
+    ]
+  }
+}
