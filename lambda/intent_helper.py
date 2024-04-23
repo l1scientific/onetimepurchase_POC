@@ -87,12 +87,12 @@ def launch_helper(p_attr, s_attr):
         or not p_attr["current_publisher"]["last_listen"]
         in p_attr["current_publisher"]["publication_name_list"]
     ):
-        stext = "Welcome back to the CBC subscription prototype. "  # s_attr['help_response']['welcome-message'][1]
+        stext = "Welcome back to the CBC one-time-purchase prototype. "  # s_attr['help_response']['welcome-message'][1]
         rtext = stext
         s_attr["last_speak"] = stext
 
     else:
-        stext = "Welcome back to the CBC subscription prototype. "  ##s_attr['help_response']['welcome-message'][2]
+        stext = "Welcome back to the CBC one-time-purchase prototype. "  ##s_attr['help_response']['welcome-message'][2]
         # stext += 'Would you like to continue reading the '  + ph.cleanse_spec_chars(p_attr['current_publisher']['last_listen']) + '?'
         rtext = stext
         s_attr["last_speak"] = stext
@@ -109,40 +109,12 @@ def launch_helper(p_attr, s_attr):
     # stext += sdummy
     # rtext += rdummy
 
-    if (len(s_attr['purchased_isps']) != 0) and (p_attr['sub_period_end'] == ""):
-        stext += "It looks like you are in test mode, and recently reset your attributes after a previous purchase. Before you can proceed, please say cancel your subscription. "
-        return stext, rtext, p_attr, s_attr
 
-    if (len(s_attr['purchased_isps']) == 0) and ((p_attr['sub_period_end'] == "") or (datetime.datetime.strptime(p_attr['sub_period_end'], '%Y-%m-%d') < datetime.datetime.now())):
-        stext += "You currently have the free version of the CBC Narrator. You will periodically hear ads before and between CBC articles. If you would like to remove all ads from playing, say 'buy a subscription' to hear your options. "  
+    if (len(s_attr['purchased_isps']) == 0):
+        stext += "You currently have the free version of the CBC Narrator. If you would like to purchase the product, say 'buy product'. "  
 
-    elif ((len(s_attr['purchased_isps']) == 0) and (datetime.datetime.strptime(p_attr['sub_period_end'], '%Y-%m-%d') > datetime.datetime.now())) or (len(s_attr['purchased_isps']) != 0):
-        
-        today = datetime.datetime.now()
-        sub_end = datetime.datetime.strptime(p_attr['sub_period_end'], '%Y-%m-%d')
-        days_remaining_to_sub_end = (sub_end - today).days
-
-        print(sub_end)
-        print(today)
-
-        if (days_remaining_to_sub_end < 0):
-
-            if s_attr['purchased_isps'][0].reference_name == 'monthly':
-
-                sub_day = sub_end.day
-                next_date = ph.next_monthly_occurrence(sub_day)
-                p_attr['sub_period_end'] = next_date.strftime('%Y-%m-%d')
-
-            elif s_attr['purchased_isps'][0].reference_name == 'yearly':
-
-                sub_day = sub_end.day
-                sub_month = sub_end.month
-                next_date = ph.next_yearly_occurrence(sub_month, sub_day)
-                p_attr['sub_period_end'] = next_date.strftime('%Y-%m-%d')
-
-            days_remaining_to_sub_end = (next_date - today).days
-
-        stext += f"You currently have {days_remaining_to_sub_end} days remaining in your current subscription period. "   
+    elif (len(s_attr['purchased_isps']) == 0):
+        stext += f"You currently have the paid version of the CBC Narrator. "   
     
     stext += "Feel free to ask for help at any time. "    
 

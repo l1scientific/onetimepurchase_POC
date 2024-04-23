@@ -735,36 +735,30 @@
           ],
           "name": "BuySubscriptionIntent",
           "samples": [
-            "purchase {subscription_plan}",
-            "buy {subscription_plan}",
-            "buy the {subscription_plan} subscription",
-            "purchase the {subscription_plan} subscription",
-            "I want to purchase the {subscription_plan} subscription",
-            "I want to buy the {subscription_plan} subscription",
-            "purchase a subscription",
-            "buy a subscription",
-            "purchase subscription",
-            "buy subscription",
-            "buy the subscription",
-            "purchase the subscription",
-            "I want to purchase the subscription",
-            "I want to buy the subscription",
-            "I want to purchase a subscription",
-            "I want to buy a subscription"
+            "purchase a product",
+            "buy a product",
+            "purchase product",
+            "buy product",
+            "buy the product",
+            "purchase the product",
+            "I want to purchase the product",
+            "I want to buy the product",
+            "I want to purchase a product",
+            "I want to buy a product"
           ]
         },
         {
           "slots": [],
           "name": "CancelSubscriptionIntent",
           "samples": [
-            "cancel the subscription",
-            "stop the subscription",
-            "I want to stop the subscription",
-            "I want to cancel the subscription",
-            "cancel my subscription",
-            "stop my subscription",
-            "I want to stop my subscription",
-            "I want to cancel my subscription"
+            "cancel the product",
+            "stop the product",
+            "I want to stop the product",
+            "I want to cancel the product",
+            "cancel my product",
+            "stop my product",
+            "I want to stop my product",
+            "I want to cancel my product"
           ]
         },
         {
