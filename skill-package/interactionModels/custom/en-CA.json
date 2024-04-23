@@ -754,6 +754,7 @@
           ]
         },
         {
+          "slots": [],
           "name": "CancelSubscriptionIntent",
           "samples": [
             "cancel the subscription",
@@ -807,19 +808,11 @@
         {
           "values": [
             {
-              "synonyms": [
-                "month",
-                "month to month"
-              ],
               "name": {
                 "value": "monthly"
               }
             },
             {
-              "synonyms": [
-                "year",
-                "yaer to year"
-              ],
               "name": {
                 "value": "yearly"
               }

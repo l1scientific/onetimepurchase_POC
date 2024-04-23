@@ -214,43 +214,25 @@ def buy_subscription_handler(handler_input):
         return handler_input.response_builder.response
 
 
-    slots = handler_input.request_envelope.request.intent.slots
-    if not slots['subscription_plan'].value:
-        
-        stext = "There are 2 subscription plans available. The monthly plan costs 1 canadian dollar per month, and the yearly plan costs 10 canadian dollars per year. To purchase a subscription, please specify which plan you would like buy saying 'purchase' and then either 'monthly' or 'yearly'."
-        rtext = f"Feel free to take more time to decide, I will take you back to where you were. {s_attr['last_speak']}"
-        # save attributes
-        handler_input.attributes_manager.session_attributes = s_attr
-        handler_input.attributes_manager.persistent_attributes = p_attr
-        handler_input.attributes_manager.save_persistent_attributes()
-            
-        handler_input.response_builder.speak(stext).ask(rtext)
-        return handler_input.response_builder.response
+    selected_id = ""
+    # Get the product id of the specified plan.
+    selected_id = s_attr["list_of_isps"][0]["productId"]
+
+    # save attributes
+    handler_input.attributes_manager.session_attributes = s_attr
+    handler_input.attributes_manager.persistent_attributes = p_attr
+    handler_input.attributes_manager.save_persistent_attributes()
     
-    else:
-        subscription_plan = slots['subscription_plan'].value
-
-        selected_id = ""
-        # Get the product id of the specified plan.
-        for plan in s_attr["list_of_isps"]:
-            if plan["referenceName"] == subscription_plan:
-                selected_id = plan["productId"]
-
-        # save attributes
-        handler_input.attributes_manager.session_attributes = s_attr
-        handler_input.attributes_manager.persistent_attributes = p_attr
-        handler_input.attributes_manager.save_persistent_attributes()
-        
-        return handler_input.response_builder.add_directive(
-                    SendRequestDirective(
-                        name="Buy",
-                        payload={
-                            "InSkillProduct": {
-                                "productId": selected_id
-                            }
-                        },
-                        token="correlationToken")
-                ).response
+    return handler_input.response_builder.add_directive(
+                SendRequestDirective(
+                    name="Buy",
+                    payload={
+                        "InSkillProduct": {
+                            "productId": selected_id
+                        }
+                    },
+                    token="correlationToken")
+            ).response
 
 
 ##########################################################################
