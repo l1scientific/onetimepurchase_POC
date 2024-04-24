@@ -113,7 +113,7 @@ def launch_helper(p_attr, s_attr):
     if (len(s_attr['purchased_isps']) == 0):
         stext += "You currently have the free version of the CBC Narrator. If you would like to purchase the product, say 'buy product'. "  
 
-    elif (len(s_attr['purchased_isps']) == 0):
+    elif (len(s_attr['purchased_isps']) != 0):
         stext += f"You currently have the paid version of the CBC Narrator. "   
     
     stext += "Feel free to ask for help at any time. "    
