@@ -279,26 +279,8 @@ def handle_isp(handler_input):
         product_id = handler_input.request_envelope.request.payload.get(
             "productId")
         purchase_result = handler_input.request_envelope.request.payload.get("purchaseResult")
-        if purchase_result == PurchaseResult.ACCEPTED.value:
-            stemp += "Congratulations, you have just purchased the subscription. You will no longer here ads during CBC articles while your subscription is active. Returning you to the main menu. "
-            #Calculate the next sub period date
-            if s_attr['purchased_isps'][0].reference_name == 'monthly':
-
-                today = datetime.datetime.now()
-                current_day = today.day
-                next_date = parsing_helper.next_monthly_occurrence(current_day)
-                p_attr['sub_period_end'] = next_date.strftime('%Y-%m-%d')
-
-            elif s_attr['purchased_isps'][0].reference_name == 'yearly':
-
-                today = datetime.datetime.now()
-                current_day = today.day
-                current_month = today.month
-                next_date = parsing_helper.next_yearly_occurrence(current_month, current_day)
-                p_attr['sub_period_end'] = next_date.strftime('%Y-%m-%d')
-
-        else:
-            stemp += "Returning you to the main menu. "
+        
+        stemp += "Returning you to the main menu. "
 
     elif (handler_input.request_envelope.request.name == "Cancel"):
         in_skill_response = in_skill_product_response(handler_input)

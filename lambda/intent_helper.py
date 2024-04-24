@@ -75,7 +75,7 @@ def launch_helper(p_attr, s_attr):
 
     if p_attr["launch_count"] == 1:
         stext = (
-            "Welcome to the CBC subscription prototype. "  ##s_attr['help_response']['welcome-message'][0]
+            "Welcome to the CBC one-time-purchase prototype. "  ##s_attr['help_response']['welcome-message'][0]
         )
         rtext = stext
         # rtext = ' To proceed, request a publication by name, or ask for a list of publications or a list of regions. '
