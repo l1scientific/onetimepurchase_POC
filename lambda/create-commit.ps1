@@ -25,4 +25,3 @@ Write-Host "# Pushing to - $branchName - in GitHub Remote" -ForegroundColor blac
 git push -u github master:$branchName
 Write-Host "DONE" -ForegroundColor green
 Write-Host "Finished all tasks"
-
